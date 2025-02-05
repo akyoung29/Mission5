@@ -46,7 +46,7 @@
     <br><br>
 
     <!-- Button to calculate total -->
-    <button type="button" onclick="calculateTotal()">Calculate Total</button>
+    <button type="button" id="calculateBtn">Calculate Total</button>
 
     <br><br>
 
@@ -55,16 +55,20 @@
     <input type="text" id="total" readonly>
 </form>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     // Function to calculate the total cost
-    function calculateTotal() {
-        var hours = parseFloat(document.getElementById('hours').value); // Ensure it's treated as a number
-        var chargePerHour = 5; // Fixed charge per hour
-        if (isNaN(hours) || hours <= 0) {
-            alert("Please enter a valid positive number of hours.");
-        } else {
-            var total = hours * chargePerHour;
-            document.getElementById('total').value = "$" + total.toFixed(2); // Display 2 decimal places
-        }
-    }
+    $(document).ready(function () {
+        $('#calculateBtn').click(function () {
+            var hours = parseFloat($('#hours').val()); // Use jQuery to get the value
+            var chargePerHour = 5; // Fixed charge per hour
+
+            if (isNaN(hours) || hours <= 0) {
+                alert("Please enter a valid positive number of hours.");
+            } else {
+                var total = hours * chargePerHour;
+                $('#total').val("$" + total.toFixed(2)); // Use jQuery to set the value
+            }
+        });
+    });
 </script>
