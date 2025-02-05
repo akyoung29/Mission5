@@ -2,37 +2,79 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Anna K Young Writing</title>
 
-    <h3> About Me </h3>
+    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon" />
 
-    <!-- A few paragraphs talking about your hobby -->
-    <p>Hey! Pleasure to meet you. My name is Anna, and I am a writer. I write a fun mix of fantasy, science-fiction, and YA. My goal is to write clean and engaging stories that inspire others to imagine and create!</p>
-    <p>I believe that we all have an innate desire to create, and writing is a great way to do that. It has helped me explore new worlds, understand people, and form connections.</p>
-    <p>If you want to learn more about what I write, or about writing in general, I would love to talk to you!</p>
+    <!-- Inline CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-    <h3> My Projects </h3>
+        .text-center {
+            text-align: center;
+        }
 
-    <!-- At least two images -->
-    <div class="section-spacing">
-        <img class="img-fluid" src="~/images/InbetweenCover.PNG" alt="Book cover of Inbetween, featuring a split image of two contrasting worlds.">
-        <h4>Inbetween</h4>
-        <p>Ren is painfully pulled between two mirror worlds. In college, she meets someone like her, Flip, who seeks the mysterious Rivenite to merge the worlds and end their dual lives. To succeed, they must dodge Rykyr’s opposition, and their hunt may leave them trapped in the Inbetween, a dimension between worlds that holds monsters and secrets about Ren's family.</p>
+        .section-spacing {
+            margin-bottom: 40px; /* Adds space between the sections */
+        }
+
+        .project-image {
+            max-width: 100%;      /* Ensures the image is responsive */
+            height: auto;         /* Maintains the aspect ratio */
+            width: 20%;           /* Limit width to 80% of the container */
+            margin: 20px auto;    /* Centers the images and adds space around them */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+
+        <h3> About Me </h3>
+
+        <!-- A few paragraphs talking about your hobby -->
+        <p>Hey! Pleasure to meet you. My name is Anna, and I am a writer. I write a fun mix of fantasy, science-fiction, and YA. My goal is to write clean and engaging stories that inspire others to imagine and create!</p>
+        <p>I believe that we all have an innate desire to create, and writing is a great way to do that. It has helped me explore new worlds, understand people, and form connections.</p>
+        <p>If you want to learn more about what I write, or about writing in general, I would love to talk to you!</p>
+
+        <h3> My Projects </h3>
+
+        <!-- At least two images -->
+        <div class="section-spacing">
+            <img class="project-image" src="~/images/InbetweenCover.PNG" alt="Book cover of Inbetween, featuring a split image of two contrasting worlds.">
+            <h4>Inbetween</h4>
+            <p>Ren is painfully pulled between two mirror worlds. In college, she meets someone like her, Flip, who seeks the mysterious Rivenite to merge the worlds and end their dual lives. To succeed, they must dodge Rykyr’s opposition, and their hunt may leave them trapped in the Inbetween, a dimension between worlds that holds monsters and secrets about Ren's family.</p>
+        </div>
+
+        <div class="section-spacing">
+            <img class="project-image" src="~/images/CoCCover.jpg" alt="Cover of Crown of Courage featuring a fantasy world and three main characters.">
+            <h4>Crown of Courage</h4>
+            <p>Book 1 of the Three Kingdoms Trilogy. Callan should be crowned by now, but the Crown of Courage has been stolen, and without it, he cannot be considered a legitimate ruler of Riax. Talien has always run from responsibility, but the chance to prove he was the best was too good to pass up and oops... now he’s a knight. Camelyn isn’t the most open, but that’s to be expected when, as the first female knight in history, the world seems against her. Together, the three must retrieve the crown, before the kingdom falls.</p>
+        </div>
+
+        <div class="section-spacing">
+            <img class="project-image" src="~/images/ESCover.PNG" alt="Cover of Enovian Skies featuring floating islands and a captain, his daughter, and a lower-islander.">
+            <h4>Enovian Skies</h4>
+            <p>Enovia, a world of floating islands, has existed for centuries, governed by the Caleum Empire and the Fyra Alliance. When the capitol city of Caleum drifts beyond the atmosphere and disappears, the world is thrown into chaos. Milus - a captain in the military, his daughter Amara, and Lilja - a lower-islander, may be the key to the survival of the islands.</p>
+        </div>
+
+        
     </div>
 
-    <div class="section-spacing">
-        <img class="img-fluid" src="~/images/CoCCover.jpg" alt="Cover of Crown of Courage featuring a fantasy world and three main characters.">
-        <h4>Crown of Courage</h4>
-        <p>Book 1 of the Three Kingdoms Trilogy. Callan should be crowned by now, but the Crown of Courage has been stolen, and without it, he cannot be considered a legitimate ruler of Riax. Talien has always run from responsibility, but the chance to prove he was the best was too good to pass up and oops... now he’s a knight. Camelyn isn’t the most open, but that’s to be expected when, as the first female knight in history, the world seems against her. Together, the three must retrieve the crown, before the kingdom falls.</p>
-    </div>
-
-    <div class="section-spacing">
-        <img class="img-fluid" src="~/images/ESCover.PNG" alt="Cover of Enovian Skies featuring floating islands and a captain, his daughter, and a lower-islander.">
-        <h4>Enovian Skies</h4>
-        <p>Enovia, a world of floating islands, has existed for centuries, governed by the Caleum Empire and the Fyra Alliance. When the capitol city of Caleum drifts beyond the atmosphere and disappears, the world is thrown into chaos. Milus - a captain in the military, his daughter Amara, and Lilja - a lower-islander, may be the key to the survival of the islands.</p>
-    </div>
-
-    <!-- Navigation to the second page -->
-    <a asp-controller="Home" asp-action="Tutoring">Tutoring</a>
-</div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

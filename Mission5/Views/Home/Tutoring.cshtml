@@ -1,11 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Tutoring";
 }
 
 <!-- Title and basic info-->
 <h2>Tutoring Information</h2>
 
-<br><br>
+<br>
+<br>
 
 <h4>Options:</h4>
 <ul>
@@ -16,7 +17,8 @@
     <li>General Tutoring/Information</li>
 </ul>
 
-<br><br>
+<br>
+<br>
 
 <h4>Credentials:</h4>
 <ul>
@@ -26,7 +28,8 @@
     <li>Clubs and Groups: Y-Fiction Writing Club, 2 writing groups</li>
 </ul>
 
-<br><br>
+<br>
+<br>
 
 <h4>Pricing</h4>
 <form id="calculationForm">
@@ -55,16 +58,13 @@
 <script>
     // Function to calculate the total cost
     function calculateTotal() {
-        var hours = document.getElementById('hours').value;
+        var hours = parseFloat(document.getElementById('hours').value); // Ensure it's treated as a number
         var chargePerHour = 5; // Fixed charge per hour
-        if (hours > 0) {
-            var total = hours * chargePerHour;
-            document.getElementById('total').value = "$" + total;
-        } else {
+        if (isNaN(hours) || hours <= 0) {
             alert("Please enter a valid positive number of hours.");
+        } else {
+            var total = hours * chargePerHour;
+            document.getElementById('total').value = "$" + total.toFixed(2); // Display 2 decimal places
         }
     }
 </script>
-
-<!-- Navigation back to the home page -->
-<a asp-controller="Home" asp-action="Index">Home</a>
